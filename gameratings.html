@@ -23,10 +23,10 @@
         </div>
 
         <div class="right">
-          <h3>Title: {{ title }}</h3>
+          <h1 class='remove'>x</h1>
+          <h2>Title: {{ title }}</h2>
           <h3>Score: {{ score }}</h3>
           <h4>Publisher: {{ publisher }}</h4>
-          <h2 class='remove'>X</h2>
         </div>
         <br clear="all">
       </div>
@@ -42,7 +42,7 @@
 
 
     function getGameInfo(title) {
-      var gameUrl = "https://videogamesrating.p.mashape.com/get.php?count=1&game=" + title
+      var gameUrl = "https://videogamesrating.p.mashape.com/get.php?count=10&game=" + title
       $.ajax({
           type: 'POST',
           url: gameUrl,
