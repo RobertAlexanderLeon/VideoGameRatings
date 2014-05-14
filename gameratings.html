@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Video Game Ratings</title>
+    <link href='gameratings.css' rel='stylesheet'>
+  </head>
+  <body>
+    <form id='add_game'>
+      <input id='title' placeholder='Enter a Video Game title'>
+      <button type='submit'>Load game</button>
+    </form>
+
+    <div class='game-container'>
+
+    </div>
+
+    <template id='game-template'>
+    <ul>
+    {{#results}}
+    <li>
+      <div class="game">
+        <div class="left">
+          <img src="{{ thumb }}">
+        </div>
+
+        <div class="right">
+          <h3>Score: {{ score }}</h3>
+          <h4>Title: {{ title }}</h4>
+          <h4>Publisher: {{ publisher }}</h4>
+        </div>
+        <br clear="all">
+      </div>
+      </li>
+      {{/results}}
+      </ul>
+    </template>
+
+  <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
+  <script src='mustache.js'></script>
+
+  <script>
+    $(document).ready(function(){
+
+      $.ajax({
+          type: 'POST',
+          url: "https://videogamesrating.p.mashape.com/get.php?count=5&game=God of% War",
+          headers: {
+              "X-Mashape-Authorization" : "rXImmAMVS6nyB23s5t5kNTxmuIS3OuhG"
+          },
+          success:function(data) { 
+              console.log(data[0]);
+              var newgame = Mustache.render($('#game-template').html(), {results: data});
+              $('.game-container').append(newgame);
+          }
+      });
+    });
+    </script>
+
+<script>
+  $(document).ready(function(){
+    $("#add_game").submit(function(event){
+      event.preventDefault(); 
+    });
+  });  
+</script>
+
+  </body>
+</html>
