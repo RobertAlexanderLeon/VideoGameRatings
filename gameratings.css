@@ -18,7 +18,7 @@ input, button {
     border-bottom-color: #c79a36;
     border-right-color: #c79a36;
   width: 160px;
-  color: #FFEA00;
+  color: #FFF152;
   background: #7d7e7d; /* Old browsers */
   background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
@@ -45,6 +45,17 @@ input {
 
 }
 
+button {
+  text-shadow:1px 1px 0 black,
+-1px -1px 0 black,
+1px -1px 0 black,
+-1px 1px 0 black,
+0px 1px 0 black,
+1px 0px 0 black,
+0px -1px 0 black,
+-1px 0px 0 black;
+}
+
 body {
   background: black;
 }
@@ -69,20 +80,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', end
     border-left-color: #f7e26a;
     border-bottom-color: #c79a36;
     border-right-color: #c79a36;
+    text-shadow:1px 1px 0 black,
+-1px -1px 0 black,
+1px -1px 0 black,
+-1px 1px 0 black,
+0px 1px 0 black,
+1px 0px 0 black,
+0px -1px 0 black,
+-1px 0px 0 black,
+4px 4px 3px #000;
 }
 
 .game h2 {
-  color: #FFEA00;
+  color: #FFF152;
 }
 
 .game h3 {
-  color: red;
+  color: #FF3C00;
 }
 
 .game .left {
   width: 110px;
   float: left;
   margin-bottom: 10px;
+  border:1px solid #021a40;
+
 }
 
 .game .remove {
@@ -92,7 +114,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', end
   float: right;
   margin: 0;
   margin-top: -20px;
-  margin-right: -40px;
+  margin-right: -45px;
+  text-shadow: none;
 }
 
 .game .remove:hover {
