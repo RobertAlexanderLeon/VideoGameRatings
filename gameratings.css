@@ -1,6 +1,18 @@
+@font-face {
+    font-family: 'minecraftiaregular';
+    src: url('./fonts/minecraftia-webfont.eot');
+    src: url('./fonts/minecraftia-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/minecraftia-webfont.woff') format('woff'),
+         url('./fonts/minecraftia-webfont.ttf') format('truetype'),
+         url('./fonts/minecraftia-webfont.svg#minecraftiaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 input, button {
   font-size: 20px;
   padding: 5px;
+  font-family: 'minecraftiaregular';
+
 }
 
 input {
@@ -18,7 +30,7 @@ input {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
   width: 600px;
   padding: 20px 20px 10px 20px;
-  font-family: Helvetica Neue;
+  font-family: 'minecraftiaregular';
   border-radius: 15px;
   color: #fff;
   margin-bottom: 20px;
@@ -34,8 +46,8 @@ input {
 }
 
 .game .remove {
-  width: 10px;
-  float: right;
+  color: #fff;
+  text-align: right;
 }
 
 .game .right {
