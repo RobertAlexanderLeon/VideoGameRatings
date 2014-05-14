@@ -33,6 +33,11 @@ input {
   float: left;
 }
 
+.game .remove {
+  width: 10px;
+  float: right;
+}
+
 .game .right {
   width: 450px;
   float: left;

@@ -26,6 +26,7 @@
           <h3>Title: {{ title }}</h3>
           <h3>Score: {{ score }}</h3>
           <h4>Publisher: {{ publisher }}</h4>
+          <h2 class='remove'>X</h2>
         </div>
         <br clear="all">
       </div>
@@ -60,13 +61,13 @@
       $('#add_game').on('submit', function() {
           getGameInfo($('#title').val());
       });
-    });
-  </script>
 
-<script>
-  $(document).ready(function(){
     $("#add_game").submit(function(event){
       event.preventDefault(); 
+    });
+
+    $('.game-container').on('click', '.remove', function() {
+      $(this).parent().parent().remove();
     });
   });  
 </script>
