@@ -6,7 +6,7 @@
   <body>
     <form id='add_game'>
       <input id='title' placeholder='Enter a Video Game title'>
-      <button type='submit'>Load game</button>
+      <button type='submit'>Load Game</button>
     </form>
 
     <div class='game-container'>
@@ -23,8 +23,8 @@
         </div>
 
         <div class="right">
+          <h3>Title: {{ title }}</h3>
           <h3>Score: {{ score }}</h3>
-          <h4>Title: {{ title }}</h4>
           <h4>Publisher: {{ publisher }}</h4>
         </div>
         <br clear="all">
@@ -38,11 +38,13 @@
   <script src='mustache.js'></script>
 
   <script>
-    $(document).ready(function(){
 
+
+    function getGameInfo(title) {
+      var gameUrl = "https://videogamesrating.p.mashape.com/get.php?count=1&game=" + title
       $.ajax({
           type: 'POST',
-          url: "https://videogamesrating.p.mashape.com/get.php?count=5&game=God of% War",
+          url: gameUrl,
           headers: {
               "X-Mashape-Authorization" : "rXImmAMVS6nyB23s5t5kNTxmuIS3OuhG"
           },
@@ -52,8 +54,14 @@
               $('.game-container').append(newgame);
           }
       });
+    }
+
+    $(document).ready(function(){
+      $('#add_game').on('submit', function() {
+          getGameInfo($('#title').val());
+      });
     });
-    </script>
+  </script>
 
 <script>
   $(document).ready(function(){
