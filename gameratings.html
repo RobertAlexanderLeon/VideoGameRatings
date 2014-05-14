@@ -52,7 +52,7 @@
           success:function(data) { 
               console.log(data[0]);
               var newgame = Mustache.render($('#game-template').html(), {results: data});
-              $('.game-container').append(newgame);
+              $('.game-container').prepend(newgame);
           }
       });
     }
