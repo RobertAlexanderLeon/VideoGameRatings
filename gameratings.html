@@ -19,7 +19,12 @@
     <li>
       <div class="game">
         <div class="left">
-          <img src="{{ thumb }}">
+            {{ #thumb }}
+              <img src="{{ thumb }}"/>
+                {{ /thumb }}
+                {{ ^thumb }}
+              <img src="./defaultImage.jpg"/>
+            {{ /thumb }}          
         </div>
 
         <div class="right">
