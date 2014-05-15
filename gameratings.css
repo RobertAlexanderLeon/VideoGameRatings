@@ -18,7 +18,7 @@ input, button {
     border-bottom-color: #c79a36;
     border-right-color: #c79a36;
   width: 160px;
-  color: #FFF152;
+  color: #fff432;
 background: rgb(69,72,77); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(69,72,77,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
@@ -114,7 +114,7 @@ width: 623px;
 }
 
 .game h2 {
-  color: #FFF152;
+  color: #fff432;
 }
 
 .game h3 {
