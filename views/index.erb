@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>Video Game Database</title>
+    <link href='stylesheet.css' rel='stylesheet' type='text/css'>
+  </head>
+
+  <header>
+      <span class= "header">Video Game Search Engine</span>
+  </header>
+
+  <body>
+    <form id='add_game'>
+      <input id='title' placeholder="Search for a Video Game title">
+      <button type='submit'>Load Game</button>
+    </form>
+
+    <div class='game-container'>
+        <span class="loading">Loading Results</span>
+    </div>
+
+    <template id='game-template'>
+    <ul>
+    {{#results}}
+    <li>
+      <div class="game">
+        <div class="left">
+            {{ #thumb }}
+              <img src="{{ thumb }}"/>
+                {{ /thumb }}
+                {{ ^thumb }}
+              <img src="defaultImage.jpg"/>
+            {{ /thumb }}          
+        </div>
+
+        <div class="right">
+          <h1 class='remove'>x</h1>
+          <h2>Title: {{ title }}</h2>
+          <h3 class='{{ score_class }}'>Score: {{ score }}</h3>
+          <h4>Publisher: {{ publisher }}</h4>
+        </div>
+        <br clear="all">
+      </div>
+      </li>
+      {{/results}}
+      </ul>
+    </template>
+
+  <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
+  <script src='mustache.js'></script>
+
+<script>
+  function blinker() {
+    $('.loading').animate({opacity: 0}, 500);
+    $('.loading').animate({opacity: 1}, 500);
+  }
+    setInterval(blinker, 1000); //Runs every second
+</script>
+
+  <script>
+    function getGameInfo(title) {
+      var gameUrl = "https://videogamesrating.p.mashape.com/get.php?count=5&game=" + title
+      $.ajax({
+          type: 'POST',
+          url: gameUrl,
+          headers: {
+              "X-Mashape-Authorization" : "rXImmAMVS6nyB23s5t5kNTxmuIS3OuhG"
+          },
+          success:function(data) { 
+              var newgame = Mustache.render($('#game-template').html(), {results: data});
+              $('.game-container').prepend(newgame);
+          }})
+          .always(function(){
+            $('.loading').hide();
+      });
+            $('.loading').show();
+    }
+
+    $(document).ready(function(){
+      $('#add_game').on('submit', function() {
+          getGameInfo($('#title').val());
+      });
+
+    $("#add_game").submit(function(event){
+      event.preventDefault(); 
+    });
+
+    $('.game-container').on('click', '.remove', function() {
+      $(this).parent().parent().remove();
+    });
+  });  
+</script>
+
+  </body>
+</html>
