@@ -56,6 +56,14 @@ text-shadow:1px 1px 0 black,
 -1px 0px 0 black;
 }
 
+header {
+font-size: x-large;  
+padding: 15px 10px 10px 40px;
+width: 505px;
+font-family: 'minecraftiaregular';
+color: #fff432;
+}
+
 body {
   background: black;
 }
