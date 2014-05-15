@@ -10,7 +10,7 @@
     </form>
 
     <div class='game-container'>
-
+        <span class="loading">Loading Results</span>
     </div>
 
     <template id='game-template'>
@@ -25,7 +25,7 @@
         <div class="right">
           <h1 class='remove'>x</h1>
           <h2>Title: {{ title }}</h2>
-          <h3>Score: {{ score }}</h3>
+          <h3 class='{{ score_class }}'>Score: {{ score }}</h3>
           <h4>Publisher: {{ publisher }}</h4>
         </div>
         <br clear="all">
@@ -38,9 +38,15 @@
   <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
   <script src='mustache.js'></script>
 
+<script>
+  function blinker() {
+    $('.loading').animate({opacity: 0}, 500);
+    $('.loading').animate({opacity: 1}, 500);
+  }
+    setInterval(blinker, 1000); //Runs every second
+</script>
+
   <script>
-
-
     function getGameInfo(title) {
       var gameUrl = "https://videogamesrating.p.mashape.com/get.php?count=5&game=" + title
       $.ajax({
@@ -50,11 +56,13 @@
               "X-Mashape-Authorization" : "rXImmAMVS6nyB23s5t5kNTxmuIS3OuhG"
           },
           success:function(data) { 
-              console.log(data[0]);
               var newgame = Mustache.render($('#game-template').html(), {results: data});
               $('.game-container').prepend(newgame);
-          }
+          }})
+          .always(function(){
+            $('.loading').hide();
       });
+            $('.loading').show();
     }
 
     $(document).ready(function(){
