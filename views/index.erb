@@ -9,6 +9,7 @@
   </header>
 
   <body>
+
     <form id='add_game'>
       <input id='title' placeholder="Search for a Video Game title">
       <button type='submit'>Load Game</button>
@@ -45,6 +46,14 @@
       </ul>
     </template>
 
+    <div id="galaxy">  
+  <div class="bg"></div>
+  <div class="stars-back"></div>
+  <div class="stars-middle"></div>
+  <div class="stars-front"></div>
+  <div class="bg center"></div>
+</div>
+
   <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
   <script src='mustache.js'></script>
 
@@ -74,6 +83,7 @@
       });
             $('.loading').show();
     }
+
 
     $(document).ready(function(){
       $('#add_game').on('submit', function() {
