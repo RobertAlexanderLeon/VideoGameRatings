@@ -87,7 +87,10 @@
                 element.score_class = "medium";
               }else{
                 element.score_class = "low";
-                element.score = "unrated";
+              } 
+
+              if(!element.score){
+              element.score = "Unrated";
               }
 
               if(!element.thumb){
