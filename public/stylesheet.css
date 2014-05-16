@@ -49,6 +49,18 @@ button {
 }
 
 
+.qbox {
+  margin-bottom: 10px;
+  border: 1px solid #021a40;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qbox img {
+  height: 40px;
+  margin-right: 20px;
+}
+
 header {
 display: inline-block;
 font-size: x-large;  
@@ -69,7 +81,6 @@ text-shadow:1px 1px 0 black,
 
 
 body {
-overflow: hidden;
 background-color: #000;
 }
 
