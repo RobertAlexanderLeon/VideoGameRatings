@@ -53,6 +53,23 @@ input {
 button {
 }
 
+.high {
+color: #00ff3c;
+}
+
+.medium {
+color: #00c3ff;
+}
+
+.low {
+color: #FF3C00;
+
+}
+
+.unrated {
+color: #ff00c3;
+}
+
 
 .play {
   margin-bottom: 10px;
@@ -147,9 +164,9 @@ width: 623px;
   color: #fff432;
 }
 
-.game h3 {
+/*.game h3 {
   color: #FF3C00;
-}
+}*/
 
 .game .left {
   width: 110px;

@@ -32,12 +32,7 @@
     <li>
       <div class="game">
         <div class="left">
-            {{ #thumb }}
-              <img src="{{ thumb }}"/>
-                {{ /thumb }}
-                {{ ^thumb }}
-              <img src="defaultImage.jpg"/>
-            {{ /thumb }}          
+            <img src="{{ thumb }}"/>                  
         </div>
 
         <div class="right">
@@ -62,6 +57,7 @@
 </div>
 
   <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js'></script>
   <script src='mustache.js'></script>
 
 <script>
@@ -82,6 +78,26 @@
               "X-Mashape-Authorization" : "rXImmAMVS6nyB23s5t5kNTxmuIS3OuhG"
           },
           success:function(data) { 
+            data.map(function(element){
+              if(!element.score){
+                element.score_class = "unrated";                
+              }else if(element.score > 7){
+                element.score_class = "high";
+              }else if (element.score > 4){
+                element.score_class = "medium";
+              }else{
+                element.score_class = "low";
+                element.score = "unrated";
+              }
+
+              if(!element.thumb){
+                element.thumb = "defaultImage.jpg"
+              }
+              return element;
+            })
+            console.log(data);
+
+
               var newgame = Mustache.render($('#game-template').html(), {results: data});
               $('.game-container').prepend(newgame);
           }})
