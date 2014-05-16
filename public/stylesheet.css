@@ -162,11 +162,13 @@ width: 623px;
 
 .game h2 {
   color: #fff432;
+  margin-top: 0;
 }
 
-/*.game h3 {
-  color: #FF3C00;
-}*/
+.game h2 a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .game .left {
   width: 110px;
@@ -199,9 +201,6 @@ width: 623px;
   padding: 0 20px;
 }
 
-.game .right h3 {
-  margin-top: 0;
-}
 .game img {
   width: 100%;
 }
