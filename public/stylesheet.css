@@ -67,7 +67,7 @@ color: #FF3C00;
 }
 
 .unrated {
-color: #ff00c3;
+color: #a0a091;
 }
 
 
@@ -176,6 +176,15 @@ width: 623px;
   margin-bottom: 10px;
   border:1px solid #021a40;
 
+}
+
+.game h4 {
+  color: #8e32ff;
+}
+
+.game h5 { 
+  color: inherit;
+  text-decoration: none;
 }
 
 .game .remove {
