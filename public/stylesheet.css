@@ -56,6 +56,15 @@ padding: 15px 10px 10px 40px;
 width: 505px;
 font-family: 'minecraftiaregular';
 color: #fff432;
+text-shadow:1px 1px 0 black,
+-1px -1px 0 black,
+1px -1px 0 black,
+-1px 1px 0 black,
+0px 1px 0 black,
+1px 0px 0 black,
+0px -1px 0 black,
+-1px 0px 0 black,
+4px 4px 3px #000;
 }
 
 
@@ -72,6 +81,15 @@ padding: 15px 10px 10px 40px;
 width: 505px;
 font-family: 'minecraftiaregular';
 color: #FF3C00;
+text-shadow:1px 1px 0 black,
+-1px -1px 0 black,
+1px -1px 0 black,
+-1px 1px 0 black,
+0px 1px 0 black,
+1px 0px 0 black,
+0px -1px 0 black,
+-1px 0px 0 black,
+4px 4px 3px #000;
 display: none;
 }
 
