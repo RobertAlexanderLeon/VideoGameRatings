@@ -89,6 +89,10 @@
                 element.score_class = "low";
               } 
 
+              if (element.score > 0) {
+                element.score = element.score + "/10";
+              }
+
               if(!element.score){
               element.score = "Unrated";
               }
