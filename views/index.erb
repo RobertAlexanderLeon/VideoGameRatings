@@ -9,7 +9,7 @@
     <div class='container'>
 
       <header>
-          <span class="qbox">
+          <span class="play">
           <img src="defaultImage.jpg"/>
           </span>
           <span class= "header">Video Game Search Engine</span>
@@ -93,6 +93,18 @@
 
 
     $(document).ready(function(){
+
+      var audioElement = document.createElement('audio');
+        audioElement.setAttribute('src', 'http://themushroomkingdom.net/sounds/wav/smw/smw_coin.wav');
+        $.get();
+        audioElement.addEventListener("load", function() {
+        audioElement.play();
+        }, true);
+
+        $('.play').click(function() {
+        audioElement.play();
+        });
+
       $('#add_game').on('submit', function() {
           getGameInfo($('#title').val());
       });
